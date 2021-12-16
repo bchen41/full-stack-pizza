@@ -1,9 +1,9 @@
-const { User, Pizza, DataTypes } = require("sequelize");
+const { Users, Pizzas, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Order extends Model {}
+class Orders extends Model {}
 
-Order.init({
+Orders.init({
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -29,4 +29,4 @@ Order.init({
     modelName: "orders",
 });
 
-module.exports = router;
+module.exports = Orders;
