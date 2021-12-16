@@ -1,40 +1,30 @@
 const Orders = require("./orders");
 const Pizzas = require("./pizzas");
 const Users = require("./users");
-const Reviews = require("./reviews")
-const Addons = require('./addons')
+const Reviews = require("./reviews");
+const Addons = require("./addons");
 
 //create review and addons model and then import/export to here
 
-Users.hasMany(Orders, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
-});
-
+Users.hasMany(Orders);
 Orders.belongsTo(Users, {
-    foreignKey: 'user_id',
-}); 
-
-Pizzas.belongsTo(Orders, {
-    foreignKey: 'order_id'
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
 });
 
-Users.hasMany(Reviews, {
-
-});
-
+Users.hasMany(Reviews);
 Reviews.belongsTo(Users, {
-
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
 });
 
-Pizzas.hasMany(Addons, {
-
+Orders.hasMany(Pizzas);
+Pizzas.belongsTo(Orders, {
+  foreignKey: "order_id",
 });
 
-Addons.belongsTo(Pizzas, {
+Pizzas.hasMany(Addons);
+Addons.belongsTo(Pizzas);
 
-});
-
-
-//Addons
-module.exports = {Orders, Pizzas, Users, Reviews, Addons}
+//ADD REVIEWS MODEL ONCE CREATED TO EXPORT
+module.exports = { Orders, Pizzas, Users, Reviews, Addons };

@@ -1,11 +1,7 @@
 const sequelize = require("../config/connection");
-const { User, Order, Review, Pizza, Addon } = require("../models");
+const { User } = require("../models");
 
-const userSeedData = require("./userData.json");
-const orderSeedData = require("./orderData.json");
-const reviewSeedData = require("./reviewData.json");
-const pizzaSeedData = require("./pizzaData.json");
-const addonSeedData = require("./addonData.json");
+const userSeedData = require("./userData.js");
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -15,10 +11,17 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  const orders = await Order.bulkCreate(orderSeedData);
-  const reviews = await Review.bulkCreate(reviewSeedData);
-  const pizzas = await Pizza.bulkCreate(pizzaSeedData);
-  const addons = await Addon.bulkCreate(addonSeedData);
+  await seedOrders();
+  console.log("\n *** ORDERS SEEDED ***\n");
+
+  await seedReviews();
+  console.log("\n *** REVIEWS SEEDED ***\n");
+
+  await seedPizzas();
+  console.log("\n *** PIZZAS SEEDED ***\n");
+
+  await seedAddons();
+  console.log("\n *** ADDONS SEEDED ***\n");
 
   process.exit(0);
 };
