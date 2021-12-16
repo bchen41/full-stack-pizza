@@ -1,6 +1,9 @@
 const router = require("express").Router();
+const {Addons} = require("../../models");
 
-
+router.get("/", (req,res) => {
+  
+})
 
 const addonsData = [
     {
