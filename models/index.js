@@ -36,5 +36,5 @@ Addons.belongsTo(Pizzas, {
 });
 
 
-//ADD REVIEWS MODEL ONCE CREATED TO EXPORT
-module.exports = {Orders, Pizzas, Users}
+//Addons
+module.exports = {Orders, Pizzas, Users, Reviews, Addons}
