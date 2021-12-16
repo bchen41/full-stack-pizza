@@ -2,7 +2,7 @@ const { Orders } = require("../models");
 
 const ordersData = [
   {
-    created_at: now(),
+    created_at: new Date(),
     user_id: 1,
   },
 ];
