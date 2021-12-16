@@ -13,7 +13,7 @@ VALUES
 
 INSERT INTO pizzas (order_id, addons_ids)
 VALUES
-(1, [1, 2, 4, 6, 7);
+(1, "[1, 2, 4, 6, 7]");
 
 INSERT INTO addons (addon_name, addon_type, price, calories)
 VALUES 
