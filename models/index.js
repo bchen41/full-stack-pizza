@@ -1,7 +1,7 @@
-const Orders = require("./orders");
-const Pizzas = require("./pizzas");
 const Users = require("./users");
+const Orders = require("./orders");
 const Reviews = require("./reviews");
+const Pizzas = require("./pizzas");
 const Addons = require("./addons");
 
 //create review and addons model and then import/export to here
