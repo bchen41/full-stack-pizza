@@ -23,8 +23,5 @@ Pizzas.belongsTo(Orders, {
   foreignKey: "order_id",
 });
 
-Pizzas.hasMany(Addons);
-Addons.belongsTo(Pizzas);
-
 //ADD REVIEWS MODEL ONCE CREATED TO EXPORT
 module.exports = { Orders, Pizzas, Users, Reviews, Addons };
