@@ -1,32 +1,50 @@
 const router = require("express").Router();
-const { Pizzas } = require("../../models");
-const { Addons } = require("../../models");
+const { Pizzas, Addons } = require("../../models");
 
 router.get("/", async (req, res) => {
-  const pizzaModels = await Pizzas.findAll();
-  const pizzas = [];
-  for (var i = 0; i < pizzaModels.length; i++) {
-    const pizza = pizzaModels[i].toJSON();
-    let addOns = await defineAddOns(pizza.addons_ids);
-    pizza.addOns = addOns;
-    pizzas.push(pizza);
+  try {
+    const pizzaModels = await Pizzas.findAll();
+    const pizzas = [];
+    for (var i = 0; i < pizzaModels.length; i++) {
+      const pizza = pizzaModels[i].toJSON();
+      let addOns = await defineAddOns(pizza.addons_ids);
+      pizza.addOns = addOns;
+      pizzas.push(pizza);
+    }
+    res.status(200).json(pizzas);
+  } catch (err) {
+    res.status(500).json(err);
   }
-  res.status(200).json(pizzas);
 });
 
 router.get("/:id", async (req, res) => {
-  const pizzaId = req.params.id;
-  if (!pizzaId || isNaN(parseInt(pizzaId))) {
-    res.status(400);
+  try {
+    const pizzaId = req.params.id;
+    if (!pizzaId || isNaN(parseInt(pizzaId))) {
+      res.status(400);
+    }
+    // get row of pizza
+    const pizzaModel = await Pizzas.findByPk(pizzaId);
+    const pizza = pizzaModel.toJSON();
+
+    let addOns = await defineAddOns(pizza.addons_ids);
+
+    pizza.addOns = addOns;
+    res.status(200).json(pizza);
+    console.log(pizza);
+  } catch (err) {
+    res.status(500).json(err);
   }
-  // get row of pizza
-  const pizzaModel = await Pizzas.findByPk(pizzaId);
-  const pizza = pizzaModel.toJSON();
+});
 
-  let addOns = defineAddOns(pizza.addons_ids);
-
-  pizza.addOns = addOns;
-  res.status(200).json(pizza);
+router.post("/", async (req, res) => {
+  try {
+    const pizzaOrder = req.body;
+    const pizzaModel = await Pizzas.create(pizzaOrder);
+    res.status(200).json(pizzaModel);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 /**
@@ -52,8 +70,5 @@ async function defineAddOns(addons_ids) {
   }
   return addOns;
 }
-
-router.post("/", (req, res) => {});
-/// heyyyyy
 
 module.exports = router;
