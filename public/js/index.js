@@ -23,6 +23,30 @@ const addonsData = [
     price: 0,
     calories: 50,
   },
+  {
+    addon_name: "marinara",
+    addon_type: "sauce",
+    price: 0,
+    calories: 50,
+  },
+  {
+    addon_name: "marinara",
+    addon_type: "sauce",
+    price: 0,
+    calories: 50,
+  },
+  {
+    addon_name: "marinara",
+    addon_type: "sauce",
+    price: 0,
+    calories: 50,
+  },
+  {
+    addon_name: "marinara",
+    addon_type: "sauce",
+    price: 0,
+    calories: 50,
+  },
 ];
 
 const crustAddons = addonsData.filter((ad) => ad.addon_type === "crust");
