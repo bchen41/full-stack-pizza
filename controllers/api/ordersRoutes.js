@@ -27,7 +27,7 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const newOrder = req.body;
-    newOrder.created_at = new Date();
+    // newOrder.created_at = new Date();
     const orderModel = await Orders.create(newOrder);
     res.status(200).json(orderModel);
   } catch (err) {
