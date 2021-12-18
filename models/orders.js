@@ -5,7 +5,7 @@ class Orders extends Model {}
 
 const options = {
   sequelize,
-  timestamps: false,
+  // timestamps: false,
   freezeTableName: true,
   underscored: true,
   modelName: "orders",
@@ -19,10 +19,10 @@ Orders.init(
       autoIncrement: true,
       primaryKey: true,
     },
-    created_at: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
+    // created_at: {
+    //   type: DataTypes.DATE,
+    //   allowNull: false,
+    // },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
