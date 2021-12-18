@@ -21,7 +21,8 @@ router.post("/", async (req, res) => {
     });
 
     req.session.save(() => {
-      req.session.id = newUser.id; // check current session for "id" or userId" or "usersId"
+
+      req.session.user_id = newUser.id; 
       req.session.email = newUser.email;
       req.session.loggedIn = true;
       res.json(newUser);
@@ -58,7 +59,8 @@ router.post("/login", async (req, res) => {
       res.json({ correctEmail, message: "You are logged in!" }); // may need to change correctEmail to first name
     });
   } catch (err) {
-    res.status(400).json({ message: "User not found!" });
+    res.status(500).json(err);
+
   }
 });
 
