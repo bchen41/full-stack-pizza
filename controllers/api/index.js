@@ -1,12 +1,14 @@
 const router = require("express").Router();
-const pizzaRoutes = require("./pizzasRoutes");
 const userRoutes = require("./usersRoutes");
-const orderRoutes = require("./ordersRoutes");
 const reviewRoutes = require("./reviewsRoutes");
+const orderRoutes = require("./ordersRoutes");
+const pizzaRoutes = require("./pizzasRoutes");
+const addonRoutes = require("./addonsRoutes");
 
-router.use("/pizzas", pizzaRoutes);
 router.use("/users", userRoutes);
-router.use("/orders", orderRoutes);
 router.use("/reviews", reviewRoutes);
+router.use("/orders", orderRoutes);
+router.use("/pizzas", pizzaRoutes);
+router.use("/addons", addonRoutes);
 
 module.exports = router;
