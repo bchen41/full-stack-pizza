@@ -1,16 +1,13 @@
 const router = require("express").Router();
-const {Addons} = require("../../models");
+const { Addons } = require("../../models");
 
-router.get("/", (req,res) => {
-  
-})
+router.get("/", async (req, res) => {
+  try {
+    const addonModels = await Addons.findAll();
+    res.status(200).json(addonModels);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-const addonsData = [
-    {
-      addon_name: "standard",
-      addon_type: "pizza",
-      price: 9,
-      calories: 100,
-    },
-
-];
+module.exports = router;
