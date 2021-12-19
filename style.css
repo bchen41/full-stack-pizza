@@ -1,13 +1,13 @@
-.navbar {
+.menu {
     background: rgba(197, 90, 48, 0.4) !important;
   }
-  .navbar .navbar-brand {
+  .menu .border {
     font-weight: bolder;
     color: #af6d36;
     font-size: 1.3em;
     margin-left: 5%;
   }
-  .nav-item {
+  /* .nav-item { */
     margin-left: 30px;
   }
   #reserve {
@@ -19,7 +19,7 @@
     margin-right: 50px;
     margin-left: 100px;
   }
-  .navbar .nav-item a {
+  .menu .nav-item a {
     font-family: 'Sarabun', sans-serif;
     font-weight: 700;
     color: #000000;
@@ -29,3 +29,113 @@
     -webkit-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
   }
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .center {
+      text-align: center;
+  }
+  
+  body {
+    background-color: #d9dcd6;
+  }
+  
+  header {
+    padding: 20px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    background-color: #7c562a;
+    color: #ffffff;
+  }
+  
+  header h1 {
+    display: inline-block;
+    font-size: 48px;
+  }
+  
+  header h1 .seo {
+    color: #d9dcd6;
+  }
+  
+  nav {
+    padding-top: 15px;
+    margin-right: 20px;
+    float: right;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 20px;
+  }
+  /* Changed header div designation to nav designation */
+  nav ul {
+    list-style-type: none;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-left: 25px;
+  }
+  
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  p {
+    font-size: 16px;
+  }
+  
+  .pizza {
+    height: 800px;
+    width: 100%;
+    margin-bottom: 25px;
+    background-image: url("../images/digital-marketing-meeting.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .float-left {
+    float: left;
+    margin-right: 25px;
+  }
+  
+  .float-right {
+    float: right;
+    margin-left: 25px;
+  }
+  
+  /* changed content designation to section designation */
+  
+  section {
+    width: 75%;
+    display: inline-block;
+    margin-left: 20px;
+  }
+  
+  /* Turned all benifit tabs into aside designation */
+  aside {
+    margin-right: 20px;
+    padding: 20px;
+    clear: both;
+    float: right;
+    width: 20%;
+    height: 100%;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    background-color: #b1742f;
+    margin-bottom: 32px;
+    color: #ffffff;
+  }
+  
+  aside h3 {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  aside img {
+    display: block;
+    margin: 10px auto;
+    max-width: 150px;
+  }
+ */
+  
