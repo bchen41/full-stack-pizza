@@ -1,13 +1,15 @@
 const router = require("express").Router();
 const path = require("path");
 const appDir = path.dirname(require.main.filename);
+const options = { root: path.join(appDir, "public") };
+const withAuth = require("../utils/auth");
 //homepage
-router.get("/", async (req, res) => {
-  try {
-    res.sendFile("home.html", { root: path.join(appDir, "public") });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+router.get("/", withAuth, async (req, res) => {
+  res.sendFile("home.html", options);
+});
+
+router.get("/orders", async (req, res) => {
+  res.sendFile("orders.html", options);
 });
 
 module.exports = router;
