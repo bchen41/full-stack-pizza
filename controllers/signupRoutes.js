@@ -1,12 +1,13 @@
 const router = require("express").Router();
+const { Reviews } = require("../models/");
+const withAuth = require("../utils/auth");
 
-//homepage
-router.get("/", async (req, res) => {
-    try {
-        res.sendFile('signup.html')
-    } catch (err) {
-        res.status(500).json(err);
-    }
+router.get("/", withAuth, async (req, res) => {
+  try {
+    res.sendFile("signup.html");
+  } catch (err) {
+    res.redirect("login");
+  }
 });
 
 module.exports = router;
