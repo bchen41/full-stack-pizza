@@ -14,42 +14,24 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- <nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Full Stack Pizza</a>
       <button
         class="navbar-toggler"
         type="button"
         data-toggle="collapse"
-        data-target="#collapse_target"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <span class="border"> <a href="#"></a> Full Stacks Pizza</span>
-      <div>
-        <ul class="navbar-nav ml-lg-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Menu</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Delivery</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contacts</a>
-          </li>
-        </ul>
-      </div>
-    </nav> -->
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Full Stack Pizza</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="#">Menu <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link active" href="#"
+            >Build Your Own<span class="sr-only">(current)</span></a
+          >
           <a class="nav-item nav-link" href="#">Login</a>
           <a class="nav-item nav-link" href="#">About Us</a>
           <!-- <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
@@ -57,7 +39,42 @@
       </div>
     </nav>
 
-    <div class="row">
+    <img src="../images/pizza.jpg" alt="stack of pizza" />
+
+    <!-- <div class="container">
+    <div class="reviews">
+      <h5>Delicously coded pizza</h5>
+        <p>“COME TRY OUR FULL-STACK PIZZA!”</p>
+      </div>
+    </div> -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+        <form>
+          <div class="form-group">
+            <label for="email-input">Email address</label>
+            <input type="email" class="form-control" id="email-input" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="password-input">Password</label>
+            <input type="password" class="form-control" id="password-input" placeholder="Password">
+          </div>
+          <a href=""></a>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+        <div class="col">
+          <div class="card" id="reviews">
+            <div class="card-body">This is some text within a card body.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- <div class="row">
 
       <div class="col-3">
         <ul>
@@ -79,8 +96,8 @@
       <div class="carousel-caption d-none d-md-block">
         <h5>Delicously coded pizza</h5>
         <p>“COME TRY OUR FULL-STACK PIZZA!”</p>
-      </div>
-    
+      </div> -->
+
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -98,7 +115,5 @@
     ></script>
   </body>
 
-  <footer>
-
-  </footer>
+  <footer></footer>
 </html>
