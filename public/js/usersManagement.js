@@ -19,10 +19,10 @@ const loginFormHandler = async function (event) {
     alert("Failed to login!");
   }
 };
-
-document
-  .querySelector(".login-btn")
-  .addEventListener("click", loginFormHandler);
+const loginbtn = document.querySelector(".login-btn") 
+  if (loginbtn) {
+    loginbtn.addEventListener("click", loginFormHandler);
+  }
 
 const signupFormHandler = async function (event) {
   event.preventDefault();
@@ -46,6 +46,25 @@ const signupFormHandler = async function (event) {
   }
 };
 
-document
-  .querySelector("#signupbtn")
-  .addEventListener("click", signupFormHandler);
+const signupbtn = document.querySelector("#signupbtn") 
+  if (signupbtn) {
+    signupbtn.addEventListener("click", signupFormHandler);
+  }
+
+const logoutFormHandler = async function (event) {
+    event.preventDefault();
+
+    const response = await fetch("/api/users/logout", {
+      method: "POST",
+       headers: { "Content-Type": "application/json" },
+    });
+    console.log(response);
+    if (response.ok) {
+      document.location.replace("/home.html");
+    }
+  };
+
+  const logoutbtn = document.querySelector("#logout-btn") 
+  if (logoutbtn) {
+    logoutbtn.addEventListener("click", logoutFormHandler);
+  }
