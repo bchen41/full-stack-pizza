@@ -1,0 +1,136 @@
+.menu {
+    background: rgba(197, 90, 48, 0.4) !important;
+  }
+  .menu .border {
+    font-weight: bolder;
+    color: #af6d36;
+    font-size: 1.3em;
+    margin-left: 5%;
+  }
+  .nav-item {
+    margin-left: 30px;
+  }
+
+  #reserve {
+    font-family: 'Sarabun', sans-serif;
+    font-weight: 700;
+    color: #b0c442;
+    border: solid #ffffff;
+    border-radius: 50px;
+    margin-right: 50px;
+    margin-left: 100px;
+  }
+  .menu .nav-item a {
+    font-family: 'Sarabun', sans-serif;
+    font-weight: 700;
+    color: #000000;
+    font-weight: bolder;
+    display: block;
+    position: relative;
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+  }
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .center {
+      text-align: center;
+  }
+  
+  body {
+    background-color: #d9dcd6;
+    background-image: url("../../images/pepperoni-pizza-stack.jpg");
+    background-size: cover;
+  }
+  
+  header {
+    padding: 20px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    background-color: #7c562a;
+    color: #ffffff;
+  }
+  
+  header h1 {
+    display: inline-block;
+    font-size: 48px;
+  }
+  
+  header h1 .seo {
+    color: #d9dcd6;
+  }
+  
+  nav {
+    padding-top: 15px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 20px;
+  }
+  /* Changed header div designation to nav designation */
+  nav ul {
+    list-style-type: none;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-left: 25px;
+  }
+  
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  p {
+    font-size: 16px;
+  }
+  
+  .pizza {
+    height: 600px;
+    width: 100%;
+    margin-bottom: 25px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .slogan {
+    background-position: center;
+
+  }
+
+  /* * {
+    box-sizing: border-box;
+  }
+  
+  .header {
+    border: 1px solid red;
+    padding: 15px; */
+  /* } */
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  [class*="col-"] {
+    float: left;
+    padding: 15px;
+    border: 1px solid red;
+  }
+  
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+  /* changed content designation to section designation */
