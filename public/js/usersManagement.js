@@ -14,15 +14,15 @@ const loginFormHandler = async function (event) {
   });
   console.log(response);
   if (response.ok) {
-    document.location.replace("/orders.html");
+    document.location.replace("/orders");
   } else {
     alert("Failed to login!");
   }
 };
-const loginbtn = document.querySelector(".login-btn") 
-  if (loginbtn) {
-    loginbtn.addEventListener("click", loginFormHandler);
-  }
+const loginbtn = document.querySelector(".login-btn");
+if (loginbtn) {
+  loginbtn.addEventListener("click", loginFormHandler);
+}
 
 const signupFormHandler = async function (event) {
   event.preventDefault();
@@ -40,31 +40,31 @@ const signupFormHandler = async function (event) {
   });
   console.log(response);
   if (response.ok) {
-    document.location.replace("/orders.html");
+    document.location.replace("/orders");
   } else {
-    alert("Failed to signed up!");
+    alert("Failed to sign up!");
   }
 };
 
-const signupbtn = document.querySelector("#signupbtn") 
-  if (signupbtn) {
-    signupbtn.addEventListener("click", signupFormHandler);
-  }
+const signupbtn = document.querySelector("#signupbtn");
+if (signupbtn) {
+  signupbtn.addEventListener("click", signupFormHandler);
+}
 
 const logoutFormHandler = async function (event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    const response = await fetch("/api/users/logout", {
-      method: "POST",
-       headers: { "Content-Type": "application/json" },
-    });
-    console.log(response);
-    if (response.ok) {
-      document.location.replace("/home.html");
-    }
-  };
-
-  const logoutbtn = document.querySelector("#logout-btn") 
-  if (logoutbtn) {
-    logoutbtn.addEventListener("click", logoutFormHandler);
+  const response = await fetch("/api/users/logout", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+  });
+  console.log(response);
+  if (response.ok) {
+    document.location.replace("/");
   }
+};
+
+const logoutbtn = document.querySelector("#logout-btn");
+if (logoutbtn) {
+  logoutbtn.addEventListener("click", logoutFormHandler);
+}
