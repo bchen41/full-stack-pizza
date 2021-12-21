@@ -9,7 +9,7 @@ const userOrders = async () => {
   for (let order of orders) {
     let totalPrice = 0;
     let totalCalories = 0;
-    console.log(order);
+    // console.log(order);
     for (let pizza of order.pizzas) {
       const pizzaInfoResponse = await fetch("/api/pizzas/" + pizza.id);
       const pizzaInfo = await pizzaInfoResponse.json();
@@ -32,7 +32,3 @@ const userOrders = async () => {
 };
 
 setTimeout(userOrders, 0);
-
-document.querySelector(".buildYourOwn").addEventListener("click", () => {
-  document.location = "/buildyourown";
-});

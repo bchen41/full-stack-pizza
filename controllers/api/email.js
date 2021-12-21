@@ -1,5 +1,5 @@
 const { text } = require("express");
-const router = require('express').Router();
+const router = require("express").Router();
 var nodemailer = require("nodemailer");
 
 let transporter = nodemailer.createTransport({
@@ -11,12 +11,12 @@ let transporter = nodemailer.createTransport({
 });
 
 function sendMail(email, text) {
-  console.log('sendMail invoked');
+  console.log("sendMail invoked");
 
   let mailInfo = {
     from: "fullstackpizza@gmail.com",
-    to: "harrison.j.oliner@gmail.com",
-    subject: "test",
+    to: "bettychen41@gmail.com",
+    subject: "Full Stack Pizza Order Confirmation!",
     text: "test",
   };
 
@@ -96,4 +96,4 @@ function sendMail(email, text) {
 
 // main().catch(console.error);
 
-module.exports = sendMail
+module.exports = sendMail;
