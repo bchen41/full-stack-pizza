@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { Users, Orders, Pizzas } = require("../../models");
-const sendMail = require("../api/email.js");
+const sendMail = require("./email.js");
 
 router.get("/", async (req, res) => {
   if (!req.session.user_id) {
@@ -20,9 +20,6 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-  if (req.session.email) {
-    sendMail();
-  }
   try {
     const orderId = req.params.id;
     const orderModel = await Orders.findByPk(orderId, {
@@ -43,6 +40,8 @@ router.post("/", async (req, res) => {
       user_id: req.session.user_id,
     };
     const orderModel = await Orders.create(newOrder);
+    let text = `You have placed an order successfully ${req.session.email}! Thank you and enjoy!`;
+    sendMail(req.session.email, text);
     res.status(200).json(orderModel);
   } catch (err) {
     res.status(500).json(err);
