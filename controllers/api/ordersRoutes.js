@@ -1,4 +1,8 @@
 const router = require("express").Router();
+
+// const SendmailTransport = require("nodemailer/lib/sendmail-transport");
+// const { resolveContent } = require("nodemailer/lib/shared");
+
 const { Users, Orders, Pizzas } = require("../../models");
 const sendMail = require("./email.js");
 
@@ -20,6 +24,9 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
+  if (req.session.user_id) {
+  }
+
   try {
     const orderId = req.params.id;
     const orderModel = await Orders.findByPk(orderId, {
@@ -43,6 +50,7 @@ router.post("/", async (req, res) => {
     let text = `You have placed an order successfully ${req.session.email}! Thank you and enjoy!`;
     sendMail(req.session.email, text);
     res.status(200).json(orderModel);
+    sendMail();
   } catch (err) {
     res.status(500).json(err);
   }
