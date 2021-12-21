@@ -1,5 +1,3 @@
-const { text } = require("express");
-const router = require("express").Router();
 var nodemailer = require("nodemailer");
 
 let transporter = nodemailer.createTransport({
@@ -15,13 +13,10 @@ function sendMail(email, text) {
 
   let mailInfo = {
     from: "fullstackpizza@gmail.com",
-    to: "bettychen41@gmail.com",
+    to: email,
     subject: "Full Stack Pizza Order Confirmation!",
-    text: "test",
+    text: text,
   };
-
-  mailInfo.to = email;
-  mailInfo.text = text;
 
   transporter.sendMail(mailInfo, (err, info) => {
     if (err) {
