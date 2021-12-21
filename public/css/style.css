@@ -12,6 +12,17 @@ img {
   padding-bottom: 10px;
 }
 
+
+footer {
+  text-align: center;
+}
+
+#info {
+  margin-left: 300px;
+  margin-right: 300px;
+  font-weight: 600;
+}
+
 h3 {
   text-decoration: underline;
 }
