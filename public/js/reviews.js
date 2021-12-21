@@ -8,8 +8,7 @@ const userReviews = async () => {
   for (let review of reviews) {
     $reviewTableEl.append(`<h5>"${review.review}"</h5><br>`);
   }
-
-  console.log(reviews);
+  // console.log(reviews);
 };
 
 userReviews();
