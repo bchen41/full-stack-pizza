@@ -23,7 +23,7 @@ const buildYourOwnHandler = async function () {
   $("#save-form-btn").on("click", saveForm);
 };
 
-const saveForm = (event) => {
+const saveForm = async (event) => {
   // get form values
   const addOns = [];
   const $crustSelected = $(`input[name="Crust"]:checked`);
@@ -40,9 +40,25 @@ const saveForm = (event) => {
       addOns.push(parseInt(other.value));
     }
   }
-
   // create the order via /api/order POST
-  // create the pizza under that order with the addOns array
+  const response = await fetch("/api/orders", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+  });
+  const order = await response.json();
+
+  const pizzaResponse = await fetch("/api/pizzas", {
+    method: "POST",
+    body: JSON.stringify({
+      order_id: order.id,
+      addons_ids: addOns,
+    }),
+    headers: { "Content-Type": "application/json" },
+  });
+  if (!pizzaResponse.ok) {
+    alert("Failed to create pizza!");
+  }
+  location.reload();
 };
 
 const createRadioQuestion = (questionName, choices) => {

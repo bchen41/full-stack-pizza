@@ -31,9 +31,13 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+  if (!req.session.user_id) {
+    res.send({ message: "Must be logged in to create a new order." });
+  }
   try {
-    const newOrder = req.body;
-    // newOrder.created_at = new Date();
+    const newOrder = {
+      user_id: req.session.user_id,
+    };
     const orderModel = await Orders.create(newOrder);
     res.status(200).json(orderModel);
   } catch (err) {
