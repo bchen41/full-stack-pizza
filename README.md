@@ -19,7 +19,8 @@ This can be used to demonstrate how a site can be made in both front and back en
 ## Contributors
 Betty Chen, Christopher Tangarife, and Harrison Oliner
 ## Questions
-If you have any questions about the application contact me directly at Christangarife95@gmailcom 
+If you have any questions about the application contact any one of us directly at our respective emails: Betty bettychen41@gmail.com, Christopher Christangarife95@gmail.com,
+Harrison harrison.j.oliner@gmail.com 
 # Contact
 Christangarife95@gmail.com 
 # Usernames
