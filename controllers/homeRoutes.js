@@ -28,8 +28,4 @@ router.get("/orders", withoutAuth, async (req, res) => {
   res.sendFile("orders.html", options);
 });
 
-router.get("/buildyourown", withoutAuth, async (req, res) => {
-  res.sendFile("buildyourown.html", options);
-});
-
 module.exports = router;

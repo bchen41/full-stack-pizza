@@ -5,7 +5,6 @@ const buildYourOwnHandler = async function () {
     alert("Failed to retrieve addon data");
   }
 
-  const pizzaAddons = data.filter((d) => d.addon_type === "pizza");
   const crustAddOns = data.filter((d) => d.addon_type === "crust");
   const sauceAddOns = data.filter((d) => d.addon_type === "sauce");
   const otherAddOns = data.filter(
@@ -15,7 +14,6 @@ const buildYourOwnHandler = async function () {
       d.addon_type !== "pizza"
   );
   console.log(otherAddOns);
-  createRadioQuestion("Pizza", pizzaAddons);
   createRadioQuestion("Crust", crustAddOns);
   createRadioQuestion("Sauce", sauceAddOns);
   createMultiSelect(otherAddOns);
@@ -25,7 +23,7 @@ const buildYourOwnHandler = async function () {
 
 const saveForm = async (event) => {
   // get form values
-  const addOns = [];
+  const addOns = [1];
   const $crustSelected = $(`input[name="Crust"]:checked`);
   const $sauceSelected = $(`input[name="Sauce"]:checked`);
   const $otherAddOnsSelected = $("ul.multiselect-container > li.active input");
