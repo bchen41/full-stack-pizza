@@ -2,9 +2,15 @@ const router = require("express").Router();
 const { Users, Orders, Pizzas } = require("../../models");
 
 router.get("/", async (req, res) => {
+  if (!req.session.user_id) {
+    res.json([]);
+  }
   try {
     const orderModels = await Orders.findAll({
-      include: [{ model: Users, attributes: ["email"] }, { model: Pizzas }],
+      where: {
+        user_id: req.session.user_id,
+      },
+      include: [{ model: Pizzas }],
     });
     res.status(200).json(orderModels);
   } catch (err) {
