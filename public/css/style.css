@@ -11,3 +11,6 @@ img {
 /* div.container {
   background-image: url(../../images/pizza.jpg);
 } */
+.pad-bottom-10 {
+  padding-bottom: 10px;
+}
