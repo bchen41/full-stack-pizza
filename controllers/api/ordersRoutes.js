@@ -1,9 +1,8 @@
 const router = require("express").Router();
-<<<<<<< HEAD
+
 // const SendmailTransport = require("nodemailer/lib/sendmail-transport");
 // const { resolveContent } = require("nodemailer/lib/shared");
-=======
->>>>>>> 969ecabe6c49fac79899284f988dc5706708b9da
+
 const { Users, Orders, Pizzas } = require("../../models");
 const sendMail = require("./email.js");
 
@@ -25,12 +24,9 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-<<<<<<< HEAD
-  if (req.session.user_id){
-    
+  if (req.session.user_id) {
   }
-=======
->>>>>>> 969ecabe6c49fac79899284f988dc5706708b9da
+
   try {
     const orderId = req.params.id;
     const orderModel = await Orders.findByPk(orderId, {
