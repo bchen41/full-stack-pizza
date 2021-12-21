@@ -40,6 +40,7 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const pizzaOrder = req.body;
+    pizzaOrder.addons_ids = JSON.stringify(pizzaOrder.addons_ids);
     const pizzaModel = await Pizzas.create(pizzaOrder);
     res.status(200).json(pizzaModel);
   } catch (err) {
