@@ -21,6 +21,14 @@ After cloning the repository, in the integrated terminal, type "npm i" to instal
 
 This can be used to demonstrate how a site can be made in both front and back end. Allowing users to create accounts, save that the user's information, and to allow them to place orders based on their unique accounts.
 
+## Screenshot
+
+![This is the homepage to Full Stack Pizza!](/public/images/fullstackpizza.png)
+
+## Heroku Link
+
+[Full Stack Pizza Shop](https://full-stack-pizza.herokuapp.com/)
+
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -40,7 +48,3 @@ Click any one of our names to check each of our own individual works below!
 [Christopher Tangarife](https://github.com/ChrisCodes54)
 [Betty Chen](https://github.com/bchen41)
 [Harrison Oliner](https://github.com/Harrison-Oliner)
-
-# Screenshots
-
-![This is the homepage to Full Stack Pizza!](/public/images/fullstackpizza.png)
