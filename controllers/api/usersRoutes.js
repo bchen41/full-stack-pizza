@@ -15,7 +15,6 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const newUser = await Users.create({
-      //may need to create first name field for review purposes
       email: req.body.email,
       password: req.body.password,
     });
@@ -55,7 +54,7 @@ router.post("/login", async (req, res) => {
       req.session.user_id = correctEmail.id;
       req.session.email = correctEmail.email;
       req.session.loggedIn = true;
-      res.json({ correctEmail, message: "You are logged in!" }); // may need to change correctEmail to first name
+      res.json({ correctEmail, message: "You are logged in!" });
     });
   } catch (err) {
     res.status(500).json(err);

@@ -1,8 +1,4 @@
 const router = require("express").Router();
-
-// const SendmailTransport = require("nodemailer/lib/sendmail-transport");
-// const { resolveContent } = require("nodemailer/lib/shared");
-
 const { Users, Orders, Pizzas } = require("../../models");
 const sendMail = require("./email.js");
 
