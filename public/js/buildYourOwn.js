@@ -18,10 +18,10 @@ const buildYourOwnHandler = async function () {
   createRadioQuestion("Sauce", sauceAddOns);
   createMultiSelect(otherAddOns);
 
-  $("#save-form-btn").on("click", saveForm);
+  $("#save-form-btn").on("click", placeOrder);
 };
 
-const saveForm = async (event) => {
+const placeOrder = async (event) => {
   // get form values
   const addOns = [1];
   const $crustSelected = $(`input[name="Crust"]:checked`);
