@@ -6,9 +6,12 @@ const userOrders = async () => {
   }
   const orders = await response.json();
   const $orderTableEl = $("#orders-table");
+  let num = 0;
   for (let order of orders) {
     let totalPrice = 0;
     let totalCalories = 0;
+    num++;
+
     // console.log(order);
     for (let pizza of order.pizzas) {
       const pizzaInfoResponse = await fetch("/api/pizzas/" + pizza.id);
@@ -22,7 +25,7 @@ const userOrders = async () => {
     $orderTableEl.append(`
         <tr>
             <td>#</td>
-            <td>${order.id}</td>
+            <td>${num}</td>
             <td>${new Date(order.createdAt).toLocaleString("en-US", {
               timeZone: "EST",
             })}</td>
