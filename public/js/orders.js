@@ -13,7 +13,10 @@ const userOrders = async () => {
     for (let pizza of order.pizzas) {
       const pizzaInfoResponse = await fetch("/api/pizzas/" + pizza.id);
       const pizzaInfo = await pizzaInfoResponse.json();
-      totalPrice += pizzaInfo.addOns.reduce((a, b) => a + b.price, 0);
+      totalPrice += pizzaInfo.addOns.reduce(
+        (a, b) => a + parseFloat(b.price),
+        0
+      );
       totalCalories += pizzaInfo.addOns.reduce((a, b) => a + b.calories, 0);
     }
     $orderTableEl.append(`
