@@ -48,12 +48,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-/**
- * addons_ids is a string of addon database Ids -> ex. "[1, 2, 4, 6, 7]"
- * parse addons_ids if not null to return the array -> ex. [1, 2, 4, 6, 7]
- * from addons table, find all addons where id IN(1, 2, 4, 6, 7) defined&returned as addOns
- * addOns is either an empty array or array of addOn objects -> ex.
- * [{id: 1, addon_name: standard, addon_type: pizza, price: 9.00, calories: 100}]*/
 async function defineAddOns(addons_ids) {
   let addOns = [];
   if (addons_ids) {
